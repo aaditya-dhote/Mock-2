@@ -1,16 +1,20 @@
-const chkBtn= document.querySelector(".btn");
-const outputer= document.querySelector(".output");
+const inputs= document.querySelector(".inputText");
+const logs = document.querySelector(".log");
+const wons= document.querySelector(".won");
+const errors= document.querySelector(".error");
+const outputs= document.querySelector(".output");
 
-var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
-
-
-
-chkBtn.addEventListener("click",function final(){
-
-    fetch(url)
-    .then((response)=>response.json())
-    .then(json=>console.log(json));
-
-   console.log(json);
-
+logs.addEventListener("click",function lg(){
+outputs.innerText = inputs.value ;
+outputs.style.color="black";
 })
+
+wons.addEventListener("click",function wn(){
+    outputs.innerText = inputs.value ;
+    outputs.style.color="yellow";
+    })
+
+   errors.addEventListener("click",function err(){
+        outputs.innerText = inputs.value ;
+        outputs.style.color="red";
+        })
